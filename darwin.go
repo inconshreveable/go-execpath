@@ -8,6 +8,7 @@ import (
 
 /*
 #include <mach-o/dyld.h>
+#include <string.h>
 */
 import "C"
 
@@ -26,5 +27,7 @@ func GetNative() (string, error) {
 			return "", fmt.Errorf("_NSGetExecutable failed to get the executable path")
 		}
 	}
-	return C.GoStringN(&buf[0], C.int(buflen)), nil
+	pathlen := C.strnlen(&buf[0], C.size_t(buflen))
+	return C.GoStringN(&buf[0], C.int(pathlen)), nil
+
 }

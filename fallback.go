@@ -3,9 +3,8 @@ package execpath
 import (
 	"fmt"
 	"os"
+	"os/exec"
 	"path"
-	"runtime"
-	"strings"
 )
 
 func pathExists(p string) (bool, error) {
@@ -68,28 +67,5 @@ func GetArg0() (p string, err error) {
 // GetPath() attempts to retrieve the executable path by searching for the
 // executable (os.Args[0]) in each directory in the PATH environment variable
 func GetPath() (p string, err error) {
-	executable := os.Args[0]
-	envPath := os.Getenv("PATH")
-
-	var sep string
-	if runtime.GOOS == "windows" {
-		if !strings.HasSuffix(executable, ".exe") {
-			executable = executable + ".exe"
-		}
-		sep = ";"
-	} else {
-		sep = ":"
-	}
-	pathDirs := strings.Split(envPath, sep)
-
-	for _, dir := range pathDirs {
-		p = path.Join(dir, executable)
-		var exists bool
-		if exists, err = pathExists(p); err == nil && exists {
-			return
-		}
-	}
-
-	err = fmt.Errorf("Executable %s not found in path", executable)
-	return
+	return exec.LookPath(os.Args[0])
 }
