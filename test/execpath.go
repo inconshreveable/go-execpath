@@ -1,7 +1,7 @@
 package main
 
 import (
-	"execpath"
+	execpath ".."
 	"fmt"
 	"reflect"
 	"runtime"
