@@ -7,7 +7,7 @@ executable file of the running program.
 		fmt.Println(err.Error())
 	}
 
-	// /path/to/your/executable
+	// Prints /path/to/your/executable
 	fmt.Printf(exePath)
 
 Determining the path to the executable of the currently running program is
@@ -44,7 +44,7 @@ proper executable path, if successful:
 Package execpath also implements the naive heuristic methods which involve
 examining os.Args[0] or checking directories in the PATH.
 
-Lastly, execpath provides Get(), the API you should prefer, which calls 
+Lastly, execpath provides Get(), the API you should prefer, which calls
 GetNative() and falls back to using heuristic methods if GetNative() fails.
 */
 package execpath
@@ -134,7 +134,7 @@ func GetArg0() (p string, err error) {
 	return
 }
 
-// GetPath returns the executable path by searching for the the executable name 
+// GetPath returns the executable path by searching for the the executable name
 // (os.Args[0]) in each directory of the PATH environment variable. Because
 // os.Args[0] is set by convention, the returned path is not guaranteed to be
 // correct, even if GetPath does not return an error.
