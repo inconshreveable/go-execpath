@@ -1,7 +1,7 @@
 PACKAGE DOCUMENTATION
 
 package execpath
-    import "."
+    import "github.com/inconshreveable/go-execpath"
 
     Package execpath provides APIs for returning the absolute path to the
     executable file of the running program.
