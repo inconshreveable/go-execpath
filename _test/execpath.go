@@ -19,7 +19,7 @@ func main() {
 		}
 	}
 
-	methods := []GetMethodT{execpath.GetNative, execpath.GetEnv, execpath.GetArg0, execpath.GetPath, execpath.Get}
+	methods := []GetMethodT{execpath.GetNative, execpath.GetArg0, execpath.GetPath, execpath.Get}
 	for _, method := range methods {
 		testMethod(method)
 	}
