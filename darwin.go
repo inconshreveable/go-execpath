@@ -29,7 +29,7 @@ func GetNative() (string, error) {
 			return "", fmt.Errorf("_NSGetExecutable failed to get the executable path")
 		}
 	}
-	pathlen := C.strnlen(&buf[0], C.size_t(buflen))
+	pathlen := C.strlen(&buf[0])
 	return C.GoStringN(&buf[0], C.int(pathlen)), nil
 
 }
