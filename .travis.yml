@@ -7,6 +7,6 @@ before_install:
 - pushd go/src
 - ./make.bash
 - popd
-- export GOPATH=./go
+- export GOPATH=`pwd`/go
 - export PATH=$PATH:$GOPATH/bin
 language: objective-c
