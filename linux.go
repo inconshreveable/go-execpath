@@ -1,6 +1,6 @@
-package execpath
-
 // +build linux
+
+package execpath
 
 import (
 	"os"

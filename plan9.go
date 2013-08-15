@@ -1,6 +1,6 @@
-package execpath
-
 // +build plan9
+
+package execpath
 
 import (
 	"fmt"

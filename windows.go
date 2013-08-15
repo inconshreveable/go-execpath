@@ -1,6 +1,6 @@
-package execpath
-
 // +build windows
+
+package execpath
 
 import (
 	"fmt"

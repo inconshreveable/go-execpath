@@ -1,6 +1,6 @@
-package execpath
-
 // +build netbsd
+
+package execpath
 
 import (
 	"os"

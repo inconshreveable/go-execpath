@@ -1,6 +1,6 @@
-package execpath
-
 // +build openbsd
+
+package execpath
 
 import (
 	"os"

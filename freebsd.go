@@ -1,6 +1,6 @@
-package execpath
-
 // +build freebsd
+
+package execpath
 
 import (
 	"os"
